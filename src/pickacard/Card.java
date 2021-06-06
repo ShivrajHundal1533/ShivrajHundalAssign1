@@ -31,7 +31,13 @@ public class Card {
     public void setSuit(String suit) {
         this.suit = suit;
     }
+
+    /**
+     * @return the card value
+     */
+    public int getValue() {
+        return value;
+    }
+
    
-   
-    
 }
