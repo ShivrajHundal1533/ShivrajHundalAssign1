@@ -38,6 +38,12 @@ public class Card {
     public int getValue() {
         return value;
     }
+    
+    /**
+     * @param value the value of the card 
+     */
+    public void setValue(int value) {
+        this.value = value;
+    }
 
-   
 }
