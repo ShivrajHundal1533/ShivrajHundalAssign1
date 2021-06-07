@@ -27,7 +27,8 @@ public class CardTrick {
         Card userCard = new Card(userSuit, userValue) {  
         };
         
-        System.out.println("User suit: " + userCard.getSuit() + " value is " + userCard.getValue());
+        System.out.println("Your Card is the " + Card.FACES[userValue - 1] + " of " + userCard.getSuit());
+        System.out.println("The cards in the magic hand are: ");
         
         Card[] magicHand = new Card[7];
 
@@ -35,10 +36,8 @@ public class CardTrick {
              magicHand[i] = new Card();
             //c.setValue(insert call to random number generator here)
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-            System.out.print("Suit is: " + magicHand[i].getSuit() + " and value is: " + magicHand[i].getValue());
-            System.out.println(" Face is: " + Card.FACES[magicHand[i].getValue() - 1]);
+            System.out.println("The " + Card.FACES[magicHand[i].getValue() - 1] + " of " + magicHand[i].getSuit());
         }
-        
         
         //this for loop checks to see if the userCard matches any of the cards
         //in the 7 drawn cards
@@ -47,11 +46,12 @@ public class CardTrick {
                 if (userCard.getValue() == magicHand[i].getValue()) {
                     System.out.println("You WIN!");
                     break;
-                }
-            } else if (i == magicHand.length - 1) {
+                } else if (i == magicHand.length - 1) {
                     System.out.println("YOU LOSE!");
             } 
-        } //this code has an issue where if duplicate cards are drawn
-        //in the magicHand, it will not print if you lost.
-    }
-}
+        } else if (i == magicHand.length - 1) {
+                    System.out.println("YOU LOSE!");     
+            }
+        }
+    }//end of main method
+}//end of CardTrick class
