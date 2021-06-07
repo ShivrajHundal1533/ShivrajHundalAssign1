@@ -34,7 +34,7 @@ public class CardTrick {
         int userValue = 1; 
         //this will result in the luckyCard object being hard coded as the Ace of Spades
         
-        Card luckyCard = newCard(userSuit, userValue) {
+        Card luckyCard = new Card(userSuit, userValue) {
         };
         
         System.out.println("Your Card is the " + Card.FACES[userValue - 1] + " of " + luckyCard.getSuit());
