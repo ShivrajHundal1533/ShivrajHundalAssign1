@@ -35,15 +35,23 @@ public class CardTrick {
              magicHand[i] = new Card();
             //c.setValue(insert call to random number generator here)
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-            System.out.println("Suit is: " + magicHand[i].getSuit() + " and value is: " + magicHand[i].getValue());
-            System.out.println("Face is: " + Card.FACES[magicHand[i].getValue() - 1]);
+            System.out.print("Suit is: " + magicHand[i].getSuit() + " and value is: " + magicHand[i].getValue());
+            System.out.println(" Face is: " + Card.FACES[magicHand[i].getValue() - 1]);
         }
         
         
-
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
+        //this for loop checks to see if the userCard matches any of the cards
+        //in the 7 drawn cards
+        for (int i = 0; i < magicHand.length; i++) {
+            if (userCard.getSuit().equals(magicHand[i].getSuit())) {
+                if (userCard.getValue() == magicHand[i].getValue()) {
+                    System.out.println("You WIN!");
+                    break;
+                }
+            } else if (i == magicHand.length - 1) {
+                    System.out.println("YOU LOSE!");
+            } 
+        } //this code has an issue where if duplicate cards are drawn
+        //in the magicHand, it will not print if you lost.
     }
-
 }
