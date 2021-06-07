@@ -21,7 +21,7 @@ public class Card {
        suit = SUITS[(int)(Math.random() * 4)];
        value = (int)(1 + Math.random() * 13);
    }
-   
+
    public static final String [] FACES = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 
    public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};

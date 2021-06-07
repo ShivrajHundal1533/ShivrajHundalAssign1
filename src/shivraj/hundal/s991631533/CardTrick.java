@@ -1,4 +1,5 @@
 package shivraj.hundal.s991631533;
+import java.util.Scanner;
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects and then asks the user to pick a card and
@@ -13,6 +14,14 @@ public class CardTrick {
 
     public static void main(String[] args) {
         
+        System.out.println("Welcome to Card Trick! In this game, a hand of 7 cards will be randomly generated. You must pick a card to guess if it is in the hand.");
+        System.out.println("To pick a Suit, enter 0, 1, 2, or 3 for Hearts, Diamonds, Spades or Clubs respectively."
+                + " To enter a value, enter a number from 1 - 13 with 1 being Ace and 13 being King");
+        System.out.println("For example, to guess Ace of Spades, you would enter 2 1 as your choice.");
+        System.out.println("\nPlease enter your guess!");
+        
+        Scanner input = new Scanner(System.in);  
+        
         Card[] magicHand = new Card[7];
 
         for (int i = 0; i < magicHand.length; i++) {
@@ -22,6 +31,8 @@ public class CardTrick {
             System.out.println("Suit is: " + magicHand[i].getSuit() + " and value is: " + magicHand[i].getValue());
             System.out.println("Face is: " + Card.FACES[magicHand[i].getValue() - 1]);
         }
+        
+        
 
         //insert code to ask the user for Card value and suit, create their card
         // and search magicHand here
