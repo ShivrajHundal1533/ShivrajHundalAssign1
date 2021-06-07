@@ -14,7 +14,7 @@ public class CardTrick {
 
     public static void main(String[] args) {
         
-        System.out.println("Welcome to Card Trick! In this game, a hand of 7 cards will be randomly generated. You must pick a card to guess if it is in the hand.");
+     /* System.out.println("Welcome to Card Trick! In this game, a hand of 7 cards will be randomly generated. You must pick a card to guess if it is in the hand.");
         System.out.println("To pick a Suit, enter 0, 1, 2, or 3 for Hearts, Diamonds, Spades or Clubs respectively."
                 + " To enter a value, enter a number from 1 - 13 with 1 being Ace and 13 being King");
         System.out.println("For example, to guess Ace of Spades, you would enter 2 1 as your choice.");
@@ -22,12 +22,22 @@ public class CardTrick {
         
         Scanner input = new Scanner(System.in);
         int userSuit = input.nextInt();
-        int userValue = input.nextInt();
+        int userValue = input.nextInt(); 
         
         Card userCard = new Card(userSuit, userValue) {  
         };
         
         System.out.println("Your Card is the " + Card.FACES[userValue - 1] + " of " + userCard.getSuit());
+        System.out.println("The cards in the magic hand are: "); */
+        
+        int userSuit = 2;
+        int userValue = 1; 
+        //this will result in the luckyCard object being hard coded as the Ace of Spades
+        
+        Card luckyCard = newCard(userSuit, userValue) {
+        };
+        
+        System.out.println("Your Card is the " + Card.FACES[userValue - 1] + " of " + luckyCard.getSuit());
         System.out.println("The cards in the magic hand are: ");
         
         Card[] magicHand = new Card[7];
@@ -41,9 +51,10 @@ public class CardTrick {
         
         //this for loop checks to see if the userCard matches any of the cards
         //in the 7 drawn cards
+        //userCard changed to luckyCard to test the hard coded card -- change luckyCard back to userCard if using user input
         for (int i = 0; i < magicHand.length; i++) {
-            if (userCard.getSuit().equals(magicHand[i].getSuit())) {
-                if (userCard.getValue() == magicHand[i].getValue()) {
+            if (luckyCard.getSuit().equals(magicHand[i].getSuit())) {
+                if (luckyCard.getValue() == magicHand[i].getValue()) {
                     System.out.println("You WIN!");
                     break;
                 } else if (i == magicHand.length - 1) {
