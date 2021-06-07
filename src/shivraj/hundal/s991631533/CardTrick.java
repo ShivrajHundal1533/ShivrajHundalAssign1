@@ -20,7 +20,14 @@ public class CardTrick {
         System.out.println("For example, to guess Ace of Spades, you would enter 2 1 as your choice.");
         System.out.println("\nPlease enter your guess!");
         
-        Scanner input = new Scanner(System.in);  
+        Scanner input = new Scanner(System.in);
+        int userSuit = input.nextInt();
+        int userValue = input.nextInt();
+        
+        Card userCard = new Card(userSuit, userValue) {  
+        };
+        
+        System.out.println("User suit: " + userCard.getSuit() + " value is " + userCard.getValue());
         
         Card[] magicHand = new Card[7];
 
